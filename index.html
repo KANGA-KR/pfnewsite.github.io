@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>돼지발바닥TV 공식 팬 커뮤니티</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Retro/Game style -->
+    <link href="https://fonts.googleapis.com/css2?family=Galmuri11:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* 마인크래프트 스타일 폰트 적용 */
+        body {
+            font-family: 'Galmuri11', 'Press Start 2P', sans-serif;
+            background-color: #1a120b;
+            color: #f5ebe0;
+            image-rendering: pixelated;
+        }
+
+        /* 마인크래프트 스타일의 크래프팅/보더 박스 스타일 */
+        .mc-border {
+            border: 4px solid #000;
+            box-shadow: 
+                inset -4px -4px 0px #3d3d3d,
+                inset 4px 4px 0px #cfcfcf;
+            background-color: #8f8f8f;
+        }
+
+        .mc-btn {
+            position: relative;
+            border: 3px solid #000;
+            box-shadow: 
+                inset -3px -3px 0px #4a4a4a,
+                inset 3px 3px 0px #c6c6c6;
+            background-color: #8c8c8c;
+            color: #e0e0e0;
+            text-shadow: 2px 2px 0px #000;
+            transition: all 0.1s ease;
+        }
+
+        .mc-btn:hover {
+            background-color: #5c8e32;
+            box-shadow: 
+                inset -3px -3px 0px #2a4e12,
+                inset 3px 3px 0px #a3e073;
+            color: #fff;
+        }
+
+        .mc-btn:active {
+            box-shadow: 
+                inset 3px 3px 0px #2a4e12,
+                inset -3px -3px 0px #a3e073;
+        }
+
+        .mc-input {
+            border: 3px solid #000;
+            background-color: #1a1a1a;
+            color: #3f3;
+            font-family: monospace;
+            box-shadow: inset 2px 2px 5px rgba(0,0,0,0.8);
+        }
+
+        .mc-input:focus {
+            outline: none;
+            border-color: #5c8e32;
+        }
+
+        /* 마크 시그니처 흙 블록 배경 */
+        .mc-dirt {
+            background-color: #866043;
+            background-image: 
+                linear-gradient(45deg, #704f35 25%, transparent 25%, transparent 75%, #704f35 75%, #704f35),
+                linear-gradient(45deg, #704f35 25%, transparent 25%, transparent 75%, #704f35 75%, #704f35);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* 잔디 상단 경계 스타일 */
+        .mc-grass-top {
+            background-color: #5c8e32;
+            border-bottom: 6px solid #456b24;
+            height: 16px;
+        }
+
+        /* 돼지 발바닥 시그니처 엠블럼 */
+        .pig-nose {
+            background-color: #ff9ebb;
+            border: 4px solid #000;
+            box-shadow: inset -4px -4px 0px #e07293;
+        }
+
+        .pig-nostril {
+            background-color: #69172d;
+            width: 12px;
+            height: 16px;
+        }
+
+        /* 스크롤바 커스텀 */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #2a2a2a;
+            border-left: 3px solid #000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8c8c8c;
+            border: 3px solid #000;
+        }
+    </style>
+</head>
+<body class="mc-dirt min-h-screen flex flex-col items-center">
+
+    <!-- 마이크래프트 하늘/메인 로고 섹션 -->
+    <header class="w-full max-w-4xl mt-6 px-4">
+        <!-- 잔디 블록 디자인 테마 상자 -->
+        <div class="mc-border overflow-hidden rounded-lg mb-6">
+            <div class="mc-grass-top w-full"></div>
+            <div class="bg-[#4d3d30] p-6 text-center border-t-4 border-[#30251c] flex flex-col items-center">
+                
+                <!-- 돼지발바닥 캐릭터 픽셀 로고 -->
+                <div class="relative w-28 h-28 mb-3 flex items-center justify-center">
+                    <!-- 돼지 머리 픽셀 상자 -->
+                    <div class="absolute inset-0 bg-[#ffb5cd] border-4 border-black rounded-md flex flex-col justify-between p-3 shadow-[inset_-6px_-6px_0px_#ea86a5]">
+                        <!-- 눈 (마크 스타일 사각형 눈) -->
+                        <div class="flex justify-between px-1">
+                            <div class="w-4 h-3 bg-white border-2 border-black flex items-center"><div class="w-2 h-2 bg-black"></div></div>
+                            <div class="w-4 h-3 bg-white border-2 border-black flex items-center"><div class="w-2 h-2 bg-black"></div></div>
+                        </div>
+                        <!-- 돼지코 (발바닥 느낌 겸용) -->
+                        <div class="self-center w-14 h-8 pig-nose flex justify-around items-center px-1 rounded">
+                            <div class="pig-nostril"></div>
+                            <div class="pig-nostril"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-3xl md:text-4xl font-bold text-yellow-300 drop-shadow-[4px_4px_0px_rgba(0,0,0,1)] tracking-wider">
+                    돼지발바닥TV
+                </h1>
+                <p class="text-sm md:text-base text-gray-200 mt-2 tracking-tight">
+                    마인크래프트 & 픽셀 게임 전문 유튜브 채널 팬페이지!
+                </p>
+
+                <!-- 주요 채널 바로가기 버튼 링크 -->
+                <div class="flex flex-wrap justify-center gap-4 mt-6 w-full">
+                    <a href="https://www.youtube.com/channel/UCitAtVtV-GwQUOD42yBcDNQ/" target="_blank" rel="noopener noreferrer" 
+                       class="mc-btn px-6 py-3 font-bold text-center flex items-center gap-2 text-sm md:text-base">
+                        <!-- 유튜브 아이콘 SVG -->
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.508 9.388.508 9.388.508s7.518 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                        유튜브 바로가기 (구독)
+                    </a>
+                    <a href="#board-section" class="mc-btn px-6 py-3 font-bold text-sm md:text-base">
+                        💬 팬 방명록 / 게시판
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 메인 컨텐츠 영역 -->
+    <main class="w-full max-w-4xl px-4 pb-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- 왼쪽 사이드바: 유튜버 프로필 및 공지 -->
+        <section class="md:col-span-1 flex flex-col gap-6">
+            <!-- 프로필 상자 -->
+            <div class="mc-border bg-[#3a3a3a] p-5">
+                <h2 class="text-xl font-bold border-b-4 border-black pb-2 text-yellow-300 mb-4">🎈 채널 소개</h2>
+                <div class="text-sm leading-relaxed text-gray-200 space-y-3">
+                    <p>안녕하세요! 마인크래프트를 사랑하는 <strong class="text-pink-400">돼지발바닥TV</strong>입니다. 🐖🐾</p>
+                    <p>다양한 야생 생존기, 모드팩 리뷰, 건축, 그리고 꿀잼 챌린지까지 만나보실 수 있습니다!</p>
+                    <div class="bg-[#1e1e1e] p-3 border-2 border-black text-center text-xs text-green-400">
+                        🔔 매주 알찬 영상 업로드 중! 알림 설정 필수!
+                    </div>
+                </div>
+            </div>
+
+            <!-- 마크 서버 사양 컨셉 공지 -->
+            <div class="mc-border bg-[#3a3a3a] p-5">
+                <h2 class="text-xl font-bold border-b-4 border-black pb-2 text-yellow-300 mb-4">🎮 추천 영상</h2>
+                <div class="space-y-3">
+                    <div class="border-2 border-black bg-black rounded p-2 text-center text-xs">
+                        <p class="text-yellow-400 font-bold mb-1">인기 급상승 시리즈!</p>
+                        <span class="text-gray-400">돼지발바닥의 마인크래프트 야생에서 살아남기 도전!</span>
+                    </div>
+                    <a href="https://www.youtube.com/channel/UCitAtVtV-GwQUOD42yBcDNQ/" target="_blank" 
+                       class="mc-btn text-xs py-2 block text-center font-bold">
+                        👉 최신 영상 보러가기
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 오른쪽: 실시간 로그인 및 게시판 (방명록) -->
+        <section id="board-section" class="md:col-span-2 flex flex-col gap-6">
+            
+            <!-- 로그인 상태창 -->
+            <div class="mc-border bg-[#3c3c3c] p-5">
+                <h2 class="text-xl font-bold border-b-4 border-black pb-2 text-yellow-300 mb-4">🔑 모험가 로그인 (간편)</h2>
+                
+                <!-- 비로그인 상태일 때 -->
+                <div id="login-form-area" class="space-y-4">
+                    <p class="text-xs text-gray-300">닉네임과 게임 캐릭터(스킨)를 지정하여 가상으로 접속해 보세요!</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-200 mb-1">닉네임</label>
+                            <input id="login-username" type="text" placeholder="마크 닉네임 입력..." maxlength="10" 
+                                   class="w-full mc-input px-3 py-2 text-sm rounded">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-200 mb-1">캐릭터 아바타</label>
+                            <select id="login-avatar" class="w-full mc-input px-3 py-2 text-sm rounded cursor-pointer">
+                                <option value="🐷">아기돼지 (Pig)</option>
+                                <option value="🧑">스티브 (Steve)</option>
+                                <option value="👩">알렉스 (Alex)</option>
+                                <option value="🟢">크리퍼 (Creeper)</option>
+                                <option value="💀">스켈레톤 (Skeleton)</option>
+                                <option value="🧟">좀비 (Zombie)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button id="btn-login" class="w-full mc-btn py-2 text-sm font-bold mt-2">
+                        🎮 서버 접속 (로그인)
+                    </button>
+                </div>
+
+                <!-- 로그인 성공 시 상태창 -->
+                <div id="user-info-area" class="hidden flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center gap-3">
+                        <div id="user-avatar" class="w-14 h-14 bg-[#1a1a1a] border-4 border-black flex items-center justify-center text-3xl rounded-md">
+                            🐷
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-xs bg-green-700 border border-green-400 px-2 py-0.5 font-bold text-white uppercase tracking-wider">ONLINE</span>
+                                <span id="user-display-name" class="font-bold text-green-400 text-lg">Steve</span>
+                            </div>
+                            <span class="text-xs text-gray-400">돼지발바닥TV 월드에 입장했습니다!</span>
+                        </div>
+                    </div>
+                    <button id="btn-logout" class="mc-btn px-4 py-2 text-xs font-bold bg-red-800 text-white hover:bg-red-700">
+                        ❌ 접속 종료 (로그아웃)
+                    </button>
+                </div>
+            </div>
+
+            <!-- 글쓰기 양식 (비로그인시 숨겨지거나 읽기 전용으로 유도) -->
+            <div class="mc-border bg-[#3c3c3c] p-5">
+                <h2 class="text-xl font-bold border-b-4 border-black pb-2 text-yellow-300 mb-4">✍ 방명록 남기기</h2>
+                
+                <div id="write-block-overlay" class="space-y-4">
+                    <!-- 알림창 (비로그인 상태일 때) -->
+                    <div id="login-warning" class="bg-red-950 border border-red-500 p-3 text-xs text-red-300 rounded text-center">
+                        ⚠️ 방명록을 작성하려면 먼저 상단에서 <strong>'모험가 로그인'</strong>을 완료해 주세요!
+                    </div>
+
+                    <!-- 실제 글쓰기 구역 -->
+                    <div class="space-y-3 opacity-50 pointer-events-none" id="write-inputs">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-200 mb-1">메시지 내용</label>
+                            <textarea id="post-content" rows="3" placeholder="돼지발바닥TV 채널에 응원의 한마디를 남겨보세요!" maxlength="150"
+                                      class="w-full mc-input p-3 text-sm rounded resize-none"></textarea>
+                            <div class="text-right text-xs text-gray-400 mt-1" id="char-counter">0 / 150</div>
+                        </div>
+                        <button id="btn-submit-post" class="w-full mc-btn py-2 text-sm font-bold">
+                            📦 방명록 등록 (우편함 넣기)
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 방명록 리스트 -->
+            <div class="mc-border bg-[#2c2c2c] p-5">
+                <div class="flex justify-between items-center border-b-4 border-black pb-2 mb-4">
+                    <h2 class="text-xl font-bold text-yellow-300">📜 월드 방명록 보관함</h2>
+                    <span id="posts-count" class="text-xs bg-[#111] px-3 py-1 text-green-400 border border-black rounded font-mono">COUNT: 0</span>
+                </div>
+
+                <!-- 게시판 피드 -->
+                <div id="posts-container" class="space-y-4 max-h-[500px] overflow-y-auto pr-2">
+                    <!-- 게시글이 없을 때 예시 -->
+                    <div id="empty-posts" class="text-center py-8 text-gray-400 text-sm space-y-2">
+                        <p>📪 아직 도착한 편지가 없습니다.</p>
+                        <p class="text-xs text-gray-500">첫 번째 모험가가 되어 흔적을 남겨보세요!</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- 푸터 영역 -->
+    <footer class="w-full bg-[#111] border-t-4 border-black py-6 text-center text-xs text-gray-500 mt-auto">
+        <div class="max-w-4xl mx-auto px-4 space-y-2">
+            <p>본 페이지는 돼지발바닥TV 유튜버를 응원하기 위해 제작된 마인크래프트 스타일 팬페이지입니다.</p>
+            <p>© 2026 돼지발바닥TV 팬커뮤니티. All Rights Reserved. Minecraft is a trademark of Mojang Synergies AB.</p>
+        </div>
+    </footer>
+
+    <!-- 알림창 모달 (기본 alert 대체용) -->
+    <div id="alert-modal" class="fixed inset-0 bg-black/80 flex items-center justify-center p-4 z-50 hidden">
+        <div class="mc-border bg-[#3a3a3a] max-w-sm w-full p-6 text-center">
+            <h3 class="text-lg font-bold text-yellow-300 mb-3" id="alert-title">안내</h3>
+            <p class="text-sm text-gray-200 mb-6" id="alert-message">메시지 내용</p>
+            <button id="btn-alert-close" class="mc-btn px-6 py-2 text-xs font-bold">확인</button>
+        </div>
+    </div>
+
+    <!-- Javascript - 게시판 동작 및 세션 관리 로직 -->
+    <script>
+        // 초기 임시 데이터 (로컬 스토리지에 데이터가 없는 경우를 위한 기본 마크 스타일 샘플 데이터)
+        const DEFAULT_POSTS = [
+            {
+                id: 'default-1',
+                username: '마인크_크리퍼',
+                avatar: '🟢',
+                content: '돼지발바닥님 영상 맨날 보고 있어요! 구독과 좋아요 완뇨! 🐷',
+                timestamp: '2026-06-25 15:43:21'
+            },
+            {
+                id: 'default-2',
+                username: '다이아몬드마니아',
+                avatar: '🧑',
+                content: '오늘 야생 생존기 진짜 꿀잼이었음 ㅋㅋㅋ 다음 편도 빠르게 올려주세요!',
+                timestamp: '2026-06-28 09:12:05'
+            }
+        ];
+
+        // 상태 관리 변수
+        let currentUser = null;
+        let posts = [];
+
+        // DOM 요소 캐싱
+        const loginFormArea = document.getElementById('login-form-area');
+        const userInfoArea = document.getElementById('user-info-area');
+        const loginUsername = document.getElementById('login-username');
+        const loginAvatar = document.getElementById('login-avatar');
+        const userAvatar = document.getElementById('user-avatar');
+        const userDisplayName = document.getElementById('user-display-name');
+        const loginWarning = document.getElementById('login-warning');
+        const writeInputs = document.getElementById('write-inputs');
+        const postContent = document.getElementById('post-content');
+        const charCounter = document.getElementById('char-counter');
+        const postsContainer = document.getElementById('posts-container');
+        const postsCount = document.getElementById('posts-count');
+        const emptyPosts = document.getElementById('empty-posts');
+
+        const btnLogin = document.getElementById('btn-login');
+        const btnLogout = document.getElementById('btn-logout');
+        const btnSubmitPost = document.getElementById('btn-submit-post');
+
+        const alertModal = document.getElementById('alert-modal');
+        const alertTitle = document.getElementById('alert-title');
+        const alertMessage = document.getElementById('alert-message');
+        const btnAlertClose = document.getElementById('btn-alert-close');
+
+        // 커스텀 알림창 표시 함수
+        function showAlert(title, message) {
+            alertTitle.innerText = title;
+            alertMessage.innerText = message;
+            alertModal.classList.remove('hidden');
+        }
+
+        btnAlertClose.addEventListener('click', () => {
+            alertModal.classList.add('hidden');
+        });
+
+        // 로컬 스토리지에서 게시글 목록 불러오기
+        function loadPosts() {
+            const storedPosts = localStorage.getItem('pig_foot_tv_posts');
+            if (storedPosts) {
+                posts = JSON.parse(storedPosts);
+            } else {
+                posts = [...DEFAULT_POSTS];
+                localStorage.setItem('pig_foot_tv_posts', JSON.stringify(posts));
+            }
+            renderPosts();
+        }
+
+        // 로컬 스토리지에서 로그인 상태 유지
+        function checkSession() {
+            const storedUser = sessionStorage.getItem('pig_foot_user');
+            if (storedUser) {
+                currentUser = JSON.parse(storedUser);
+                applyLoggedInUI();
+            } else {
+                applyLoggedOutUI();
+            }
+        }
+
+        // 로그인 상태 UI 전환
+        function applyLoggedInUI() {
+            loginFormArea.classList.add('hidden');
+            userInfoArea.classList.remove('hidden');
+            userAvatar.innerText = currentUser.avatar;
+            userDisplayName.innerText = currentUser.username;
+
+            // 글쓰기 영역 활성화
+            loginWarning.classList.add('hidden');
+            writeInputs.classList.remove('opacity-50', 'pointer-events-none');
+        }
+
+        // 로그아웃 상태 UI 전환
+        function applyLoggedOutUI() {
+            loginFormArea.classList.remove('hidden');
+            userInfoArea.classList.add('hidden');
+
+            // 글쓰기 영역 비활성화
+            loginWarning.classList.remove('hidden');
+            writeInputs.classList.add('opacity-50', 'pointer-events-none');
+        }
+
+        // 로그인 핸들러
+        btnLogin.addEventListener('click', () => {
+            const username = loginUsername.value.trim();
+            const avatar = loginAvatar.value;
+
+            if (!username) {
+                showAlert('입력 오류', '모험가의 이름을 입력해 주세요!');
+                return;
+            }
+
+            currentUser = { username, avatar };
+            sessionStorage.setItem('pig_foot_user', JSON.stringify(currentUser));
+            applyLoggedInUI();
+            showAlert('접속 완료', `${username} 님이 돼지발바닥TV 월드에 입장했습니다!`);
+        });
+
+        // 로그아웃 핸들러
+        btnLogout.addEventListener('click', () => {
+            sessionStorage.removeItem('pig_foot_user');
+            currentUser = null;
+            applyLoggedOutUI();
+            loginUsername.value = '';
+            showAlert('접속 종료', '서버에서 안전하게 로그아웃 되었습니다.');
+        });
+
+        // 글쓰기 입력 카운팅 리스너
+        postContent.addEventListener('input', () => {
+            const length = postContent.value.length;
+            charCounter.innerText = `${length} / 150`;
+        });
+
+        // 방명록 글쓰기 핸들러
+        btnSubmitPost.addEventListener('click', () => {
+            if (!currentUser) {
+                showAlert('오류', '로그인 후에 이용하실 수 있습니다.');
+                return;
+            }
+
+            const content = postContent.value.trim();
+            if (!content) {
+                showAlert('빈 내용', '남기실 메시지를 작성해 주세요!');
+                return;
+            }
+
+            const now = new Date();
+            const formattedDate = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
+
+            const newPost = {
+                id: 'post-' + Date.now(),
+                username: currentUser.username,
+                avatar: currentUser.avatar,
+                content: content,
+                timestamp: formattedDate
+            };
+
+            posts.unshift(newPost); // 맨 앞에 추가
+            localStorage.setItem('pig_foot_tv_posts', JSON.stringify(posts));
+            
+            // 입력창 청소
+            postContent.value = '';
+            charCounter.innerText = '0 / 150';
+
+            renderPosts();
+            showAlert('등록 완료', '방명록 보관함에 새 편지가 도착했습니다!');
+        });
+
+        // 게시글 삭제 (가상 관리자 기능 또는 본인 작성 기능 간소화 - 세션 닉네임과 일치 시)
+        function deletePost(id) {
+            posts = posts.filter(post => post.id !== id);
+            localStorage.setItem('pig_foot_tv_posts', JSON.stringify(posts));
+            renderPosts();
+            showAlert('삭제 완료', '게시글이 성공적으로 철거되었습니다.');
+        }
+
+        // 방명록 렌더링 함수
+        function renderPosts() {
+            postsCount.innerText = `COUNT: ${posts.length}`;
+
+            if (posts.length === 0) {
+                emptyPosts.classList.remove('hidden');
+                postsContainer.innerHTML = '';
+                postsContainer.appendChild(emptyPosts);
+                return;
+            } else {
+                emptyPosts.classList.add('hidden');
+            }
+
+            postsContainer.innerHTML = '';
+
+            posts.forEach(post => {
+                // 개별 포스트 HTML 템플릿 제작
+                const postEl = document.createElement('div');
+                postEl.className = 'border-2 border-black bg-[#1f1f1f] p-4 flex gap-3 relative rounded';
+
+                // 자신이 쓴 글인 경우 삭제 버튼 노출 여부 결정
+                const isMyPost = currentUser && currentUser.username === post.username;
+                const deleteBtnHtml = isMyPost 
+                    ? `<button onclick="deletePost('${post.id}')" class="absolute top-2 right-2 text-xs text-red-500 hover:text-red-300 font-bold">
+                         [X]
+                       </button>` 
+                    : '';
+
+                postEl.innerHTML = `
+                    <div class="w-10 h-10 bg-[#3a3a3a] border-2 border-black flex items-center justify-center text-2xl rounded">
+                        ${post.avatar || '🐷'}
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="font-bold text-yellow-400 text-sm truncate">${post.username}</span>
+                            <span class="text-[10px] text-gray-500 font-mono">${post.timestamp}</span>
+                        </div>
+                        <p class="text-xs text-gray-200 whitespace-pre-wrap break-all">${post.content}</p>
+                    </div>
+                    ${deleteBtnHtml}
+                `;
+                postsContainer.appendChild(postEl);
+            });
+        }
+
+        // 초기화
+        window.onload = function() {
+            loadPosts();
+            checkSession();
+        };
+    </script>
+</body>
+</html>
